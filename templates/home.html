@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Diabetes Prediction Template</title>
+
+  <!-- CSS  -->
+  <!-- css -->
+  <link rel="stylesheet" href="static/styles.css">
+
+</head>
+
+<body>
+ 
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Diabetes Risk Prediction</h1>
+      <div class="row center">
+        <h4 class="header col s12 light">Predict the Probability of Having Diabetes
+        <br>
+        <br>
+        </h4>
+      </div>
+
+  <div class="row">
+
+    <form action='/predict' method="post" class="col s12">
+
+      <div class="row">
+        <div class="input-field col s4">
+            <!-- Age -->
+            <label for="Age"><b>Age (in integers) </b></label>
+            <br>
+          <input placeholder="Input age" name="Age" id="first_name" type="text" class="validate">
+        </div>
+      </div>
+
+      <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Sex -->
+                            <h5 class="card-title">Gender</h5>
+                            <select name="Gender" id="Gender" required="required">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>  
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Do you experience Polyuria (Excessive Urination)?</h5>
+                            <!-- Polyuria -->
+                            <select name="Polyuria" id="Polyuria" required="required">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>   
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Do you experience intense thirstiness (Polydipsia)? </h5>
+                            <!-- Polydipsia -->
+                            <select name="Polydipsia" id="Polydipsia" required="required">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>   
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Do you experience sudden weight loss?</h5>
+                            <!-- Sudden_Weight_Loss -->
+                            <select name="Sudden_Weight_Loss" id="Sudden_Weight_Loss" required="required">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>   
+                            </select>
+                        </div>
+                    </div>
+                </div>
+      </div>
+
+
+      <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Weakness -->
+                            <h5 class="card-title">Do you experience excessive fatigue?</h5>
+                            <select name="Weakness" id="Weakness" required="required">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>  
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Do you experience unexplained, high increase in appetite?</h5>
+                            <!-- Polyphagia -->
+                            <select name="Polyphagia" id="Polyphagia" required="required">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>   
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Any sign of genital thrush?</h5>
+                            <!-- Genital_Thrush -->
+                            <select name="Genital_Thrush" id="Genital_Thrush" required="required">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>   
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                 <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Do you have blurred visions?</h5>
+                            <!-- Visual_Blurring -->
+                            <select name="Visual_Blurring" id="Visual_Blurring" required="required">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>   
+                            </select>
+                        </div>
+                    </div>
+                </div>
+      </div>
+
+      <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Itching -->
+                            <h5 class="card-title">Do you experience itching?</h5>
+                            <select name="Itching" id="Itching" required="required">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>  
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Are you mostly irritable?</h5>
+                            <!-- Irritability -->
+                            <select name="Irritability" id="Irritability" required="required">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>   
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Have symptoms of delayed healing?</h5>
+                            <!-- Delayed_Healing -->
+                            <select name="Delayed_Healing" id="Delayed_Healing" required="required">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>   
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                 <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Do you have Partial Paresis?</h5>
+                            <!-- Partial_Paresis -->
+                            <select name="Partial_Paresis" id="Partial_Paresis" required="required">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>   
+                            </select>
+                        </div>
+                    </div>
+                </div>
+      </div>
+
+
+      <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Muscle_Stiffness -->
+                            <h5 class="card-title">Muscle Stiffness?</h5>
+                            <select name="Muscle_Stiffness" id="Muscle_Stiffness" required="required">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>  
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Sudden hair loss (Alopecia)?</h5>
+                            <!-- Alopecia-->
+                            <select name="Alopecia" id="Alopecia" required="required">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>   
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"> Are you obesed?</h5>
+                            <!-- Obesity-->
+                            <select name="Obesity" id="Obesity" required="required">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>   
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                 
+      </div>
+
+    <br>
+    <br>
+    <br>
+    <!-- Submit -->
+    <input type="submit" value="Submit Details" class="btn btn-secondary">
+
+    </form>
+  
+  </div>
+
+      <br>
+      <br>
+      <h3>
+        {{prediction_text}}<h3>
+
+    </div>
+  </div>
+
+
+   
+  </body>
+</html>
+
