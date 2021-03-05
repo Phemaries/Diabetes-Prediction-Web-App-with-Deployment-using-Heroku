@@ -2,7 +2,7 @@
 	Diabetes Risk Prediction Web App with Machine Learnig Deployment using Heroku
 
 ## Demo:
-	Link:
+	Link: https://diabetes-web-prediction-app.herokuapp.com
 
 ## Data:
 	This project uses data from collected using direct questionnaires from patients of Sylhet Diabetes Hospital in Sylhet, Bangladesh and approved by a doctor. (Islam, MM Faniqul et al. 2020). The data contains 17 attribute features with 520 number of instances and downloaded from the UC Irvine Machine Learning Repository
