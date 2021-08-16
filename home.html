@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/> -->
+	  <title>Diabetes Prediction Template</title>
+
+	  <!-- CSS  -->
+	  <link rel="stylesheet" href="static/styles.css">
+
+	</head>
+
+	<body>
+	 
+	  	<div class="container" id="container-banner">
+		    <div class="container-head">
+		      <br><br>
+		      <h1 class="header">Diabetes Risk Prediction</h1>
+		      <div>
+		        <h2 class="header-mini">Predict the Probability of Having Diabetes
+		        <br>
+		        <br>
+		        </h2>
+		      </div>
+		    </div>
+
+		  	<div class="row">
+
+			    <form action='/predict' method="post" class="form">
+
+			        <div class="age-body">
+			            <!-- Age -->
+			            <form class="age-form">
+			            	<span class= "text-input">Age (Minimum of 30 years):</span>
+			            	<input type="number" value="30" min="30" max="110" size="4" class='box-shape'/>
+			            </form>
+			           <!--  <label for="Age"><b>Age (in integers) </b></label>
+			            <br>
+			          <input placeholder="Input age" name="Age" id="Age" type="text" class="box-shape"> -->
+			        </div>
+			      <!-- </div> -->
+
+			      <!-- <div class="row"> -->
+			                
+			        <div class="gender-body">
+			            <!-- Sex -->
+			            <form class="form-body">
+			            	<span class= "text-input">Gender:</span>
+			            	<select name="Gender" id="Sex" required="required" class='box-shape'>
+				                <option value="Male">Male</option>
+				                <option value="Female">Female</option>  
+			            	</select>
+			            </form>
+			            <!-- <h5 class="card-title">Gender</h5>
+			            <select name="Gender" id="Sex" required="required" class='box-shape'>
+			                <option value="Male">Male</option>
+			                <option value="Female">Female</option>  
+			            </select> -->
+			        </div>
+			  
+
+			              
+			        <div class="polyuria-body">
+			            <!-- Polyuria -->
+			            <form class="form-body">
+			            	<span class= "text-input">Do yo have Polyuria?:</span>
+			            	<select name="Polyuria" id="Polyuria" required="required" class='box-shape'>
+				                <option value="Yes">Yes</option>
+				                <option value="No">No</option>  
+			            	</select>
+			            </form>
+			            <!-- <select name="Polyuria" id="Polyuria" required="required" class='box-shape'>
+			                <option value="Yes">Yes</option>
+			                <option value="No">No</option>   
+			            </select> -->
+			        </div>
+			               
+
+			        <div class="polydipsia-body">
+			            <!-- Polydipsia -->
+			            <form class="form-body">
+			            	<span class= "text-input">Do yo have Polydipsia?:</span>
+			            	<select name="Polydipsia" id="Polydipsia" required="required" class='box-shape'>
+				                <option value="Yes">Yes</option>
+				                <option value="No">No</option>  
+			            	</select>
+			            </form>
+			            <!-- <select name="Polydipsia" id="Polydipsia" required="required" class='box-shape'>
+			                <option value="Yes">Yes</option>
+			                <option value="No">No</option>   
+			            </select> -->
+			        </div>
+			  
+			        <div class="weight-body">
+			            <!-- Sudden_Weight_Loss -->
+			            <form class="form-body">
+			            	<span class= "text-input">Do you experience sudden weight loss?:</span>
+			            	<select name="Sudden_Weight_Loss" id="Sudden_Weight_Loss" required="required" class='box-shape'>
+				                <option value="Yes">Yes</option>
+				                <option value="No">No</option>  
+			            	</select>
+			            </form>
+			            <!-- <select name="Sudden_Weight_Loss" id="Sudden_Weight_Loss" required="required" class='box-shape'>
+			                <option value="Yes">Yes</option>
+			                <option value="No">No</option>   
+			            </select> -->
+			        </div>
+			                 
+
+			        <div class="weakness-body">
+			            <!-- Weakness -->
+			            <form class="form-body">
+			            	<span class= "text-input">Do you experience signs of Weakness?:</span>
+			            	<select name="Weakness" id="Weakness" required="required" class='box-shape'>
+				                <option value="Yes">Yes</option>
+				                <option value="No">No</option>  
+			            	</select>
+			            </form>
+			            <!-- <select name="Weakness" id="Weakness" required="required" class='box-shape'>
+			                <option value="Yes">Yes</option>
+			                <option value="No">No</option>  
+			            </select> -->
+			        </div>
+
+			                
+			                
+			        <div class="polyphagia-body">
+			            <!-- Polyphagia -->
+			            <form class="form-body">
+			            	<span class= "text-input">Do you have Polyphagia?:</span>
+			            	<select name="Polyphagia" id="Polyphagia" required="required" class='box-shape'>
+				                <option value="Yes">Yes</option>
+				                <option value="No">No</option>  
+			            	</select>
+			            </form>
+			           <!--  <select name="Polyphagia" id="Polyphagia" required="required" class='box-shape'>
+			                <option value="Yes">Yes</option>
+			                <option value="No">No</option>   
+			            </select> -->
+			        </div>
+
+
+			        <div class="genital-body">
+			            <!-- Genital_Thrush -->
+			            <form class="form-body">
+			            	<span class= "text-input">Genital Thrush?:</span>
+			            	<select name="Genital_Thrush" id="Genital_Thrush" required="required" class='box-shape'>
+				                <option value="Yes">Yes</option>
+				                <option value="No">No</option>  
+			            	</select>
+			            </form>
+			            <!-- <select name="Genital_Thrush" id="Genital_Thrush" required="required" class='box-shape'>
+			                <option value="Yes">Yes</option>
+			                <option value="No">No</option>   
+			            </select> -->
+			        </div>
+
+			                 
+			        <div class="visual-body">
+			            <!-- Visual_Blurring -->
+			            <form class="form-body">
+			            	<span class= "text-input">Do you experience visual blurring?:</span>
+			            	<select name="Visual_Blurring" id="Visual_Blurring" required="required" class='box-shape'>
+				                <option value="Yes">Yes</option>
+				                <option value="No">No</option>  
+			            	</select>
+			            </form>
+			            <!-- <select name="Visual_Blurring" id="Visual_Blurring" required="required" class='box-shape'>
+			                <option value="Yes">Yes</option>
+			                <option value="No">No</option>   
+			            </select> -->
+			        </div>
+			    
+
+			      
+			        <div class="itch-body">
+			            <!-- Itching -->
+			            <form class="form-body">
+			            	<span class= "text-input">Do you experience itching?:</span>
+			            	<select name="Itching" id="Itching" required="required" class='box-shape'>
+				                <option value="Yes">Yes</option>
+				                <option value="No">No</option>  
+			            	</select>
+			            </form>
+			            <!-- <select name="Itching" id="Itching" required="required" class='box-shape'>
+			                <option value="Yes">Yes</option>
+			                <option value="No">No</option>  
+			            </select> -->
+			        </div>
+			                 
+			              
+			        <div class="irritability-body">
+			            <!-- Irritability -->
+			            <form class="form-body">
+			            	<span class= "text-input">Irritability?:</span>
+			            	<select name="Irritability" id="Irritability" required="required" class='box-shape'>
+				                <option value="Yes">Yes</option>
+				                <option value="No">No</option>  
+			            	</select>
+			            </form>
+			            <!-- <select name="Irritability" id="Irritability" required="required" class='box-shape'>
+			                <option value="Yes">Yes</option>
+			                <option value="No">No</option>   
+			            </select> -->
+			        </div>
+
+
+			        <div class="healing-body">
+			            <!-- Delayed_Healing -->
+			            <form class="form-body">
+			            	<span class= "text-input">Have symptoms of delayed healing?:</span>
+			            	<select name="Delayed_Healing" id="Delayed_Healing" required="required" class='box-shape'>
+				                <option value="Yes">Yes</option>
+				                <option value="No">No</option>  
+			            	</select>
+			            </form>
+			            <!-- <select name="Delayed_Healing" id="Delayed_Healing" required="required" class='box-shape'>
+			                <option value="Yes">Yes</option>
+			                <option value="No">No</option>   
+			            </select> -->
+			        </div>
+
+			                
+			         
+			        <div class="paresis-body">
+			            <!-- Partial_Paresis -->
+			            <form class="form-body">
+			            	<span class= "text-input">Had Partial Paresis?:</span>
+			            	<select name="Partial_Paresis" id="Partial_Paresis" required="required" class='box-shape'>
+				                <option value="Yes">Yes</option>
+				                <option value="No">No</option>  
+			            	</select>
+			            </form>
+			            <!-- <select name="Partial_Paresis" id="Partial_Paresis" required="required" class='box-shape'>
+			                <option value="Yes">Yes</option>
+			                <option value="No">No</option>   
+			            </select> -->
+			        </div>
+			        
+			     
+
+
+			        <div class="muscle-body">
+			            <!-- Muscle_Stiffness -->
+			            <form class="form-body">
+			            	<span class= "text-input">Muscle Stiffness?:</span>
+			            	<select name="Muscle_Stiffness" id="Muscle_Stiffness" required="required" class='box-shape'>
+				                <option value="Yes">Yes</option>
+				                <option value="No">No</option>  
+			            	</select>
+			            </form>
+			            <!-- <select name="Muscle_Stiffness" id="Muscle_Stiffness" required="required" class='box-shape'>
+			                <option value="Yes">Yes</option>
+			                <option value="No">No</option>  
+			            </select> -->
+			        </div>
+
+
+			                
+			        <div class="alopecia-body">
+			            <!-- Alopecia-->
+			            <form class="form-body">
+			            	<span class= "text-input">Do you have Alopecia?:</span>
+			            	<select name="Alopecia" id="Alopecia" required="required" class='box-shape'>
+				                <option value="Yes">Yes</option>
+				                <option value="No">No</option>  
+			            	</select>
+			            </form>
+			            <!-- <select name="Alopecia" id="Alopecia" required="required" class='box-shape'>
+			                <option value="Yes">Yes</option>
+			                <option value="No">No</option>   
+			            </select> -->
+			        </div>
+			                 
+
+			        <div class="obesity-body">
+			            <!-- Obesity-->
+			            <form class="form-body">
+			            	<span class= "text-input">Obesity?:</span>
+			            	<select name="Obesity" id="Obesity" required="required" class='box-shape'>
+				                <option value="Yes">Yes</option>
+				                <option value="No">No</option>  
+			            	</select>
+			            </form>
+			           <!--  <select name="Obesity" id="Obesity" required="required" class='box-shape'>
+			                <option value="Yes">Yes</option>
+			                <option value="No">No</option>   
+			            </select> -->
+			        </div>
+
+			                <br>
+			                <br>
+			                <br>
+
+			        <!-- Submit  -->
+			        <div class= "submit">
+			        	<input type="submit" value="Submit Details" class="btn-submit">	
+			        </div>
+			        
+			   
+			    </form>
+			  
+		  	</div>
+
+	      <br>
+	      <br>
+	   
+	   <h3>{{prediction_text}}<h3>     
+	    <!-- </div> -->
+	  	</div>
+
+		<script src="script.js"></script>
+	</body>
+
+</html>
+
