@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Predicting_Diabetes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+</head>
+
+<body>
+    <div class="container" id="container-banner">
+        <div class="container-head">
+            <br><br>
+            <h1 class="header">Diabetes Risk Prediction</h1>
+            <div>
+                <h4 class="header-mini">Predict the Probability of Having Diabetes
+                    <br>
+                    <br>
+                </h4>
+            </div>
+        </div>
+
+        <div class="container">
+            {% if message %}
+            <p class="message">{{ message | safe }}</p>
+            {% endif %}
+
+            <form action='/predict' method="post" class="form-group">
+
+                <div class="form-group">
+                    <!-- Age -->
+
+                    <span class="text-input">Age (Minimum of 13 years):</span>
+                    <input type="number" name="Age" value="13" min="13" max="110" size="4" class="form-control" />
+
+                </div>
+
+
+                <div class="form-group">
+                    <!-- Sex -->
+
+                    <span class="text-input">Gender:</span>
+                    <select name="Gender" id="Sex" required="required" class="form-control">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>  
+                                </select>
+
+                </div>
+
+
+
+                <div class="form-group">
+                    <!-- Polyuria -->
+
+                    <span class="text-input">Do yo have Polyuria?:</span>
+                    <select name="Polyuria" id="Polyuria" required="required" class="form-control">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>  
+                                </select>
+
+                </div>
+
+
+                <div class="form-group">
+                    <!-- Polydipsia -->
+
+                    <span class="text-input">Do yo have Polydipsia?:</span>
+                    <select name="Polydipsia" id="Polydipsia" required="required" class="form-control">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>  
+                                </select>
+
+                </div>
+
+                <div class="form-group">
+                    <!-- Sudden_Weight_Loss -->
+                    < <span class="text-input">Do you experience sudden weight loss?:</span>
+                        <select name="Sudden_Weight_Loss" id="Sudden_Weight_Loss" required="required" class="form-control">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>  
+                                </select>
+
+                </div>
+
+
+                <div class="form-group">
+                    <!-- Weakness -->
+
+                    <span class="text-input">Do you experience signs of Weakness?:</span>
+                    <select name="Weakness" id="Weakness" required="required" class="form-control">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>  
+                                </select>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <span class="text-input">Do you have Polyphagia?:</span>
+                    <select name="Polyphagia" id="Polyphagia" required="required" class="form-control">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>  
+                                </select>
+
+                </div>
+
+
+                <div class="form-group">
+                    <!-- Genital_Thrush -->
+
+                    <span class="text-input">Genital Thrush?:</span>
+                    <select name="Genital_Thrush" id="Genital_Thrush" required="required" class="form-control">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>  
+                                </select>
+
+                </div>
+
+
+                <div class="form-group">
+                    <!-- Visual_Blurring -->
+
+                    <span class="text-input">Do you experience visual blurring?:</span>
+                    <select name="Visual_Blurring" id="Visual_Blurring" required="required" class="form-control">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>  
+                                </select>
+
+                </div>
+
+
+
+                <div class="form-group">
+                    <!-- Itching -->
+
+                    <span class="text-input">Do you experience itching?:</span>
+                    <select name="Itching" id="Itching" required="required" class="form-control">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>  
+                                </select>
+
+                </div>
+
+
+                <div class="form-group">
+                    <!-- Irritability -->
+
+                    <span class="text-input">Irritability?:</span>
+                    <select name="Irritability" id="Irritability" required="required" class="form-control">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>  
+                                </select>
+
+                </div>
+
+
+                <div class="form-group">
+                    <!-- Delayed_Healing -->
+
+                    <span class="text-input">Have symptoms of delayed healing?:</span>
+                    <select name="Delayed_Healing" id="Delayed_Healing" required="required" class="form-control">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>  
+                                </select>
+
+                </div>
+
+
+
+                <div class="form-group">
+                    <!-- Partial_Paresis -->
+
+                    <span class="text-input">Had Partial Paresis?:</span>
+                    <select name="Partial_Paresis" id="Partial_Paresis" required="required" class="form-control">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>  
+                                </select>
+
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <!-- Muscle_Stiffness -->
+
+                    <span class="text-input">Muscle Stiffness?:</span>
+                    <select name="Muscle_Stiffness" id="Muscle_Stiffness" required="required" class="form-control">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>  
+                                </select>
+
+                </div>
+
+
+
+                <div class="form-group">
+                    <!-- Alopecia-->
+
+                    <span class="text-input">Do you have Alopecia?:</span>
+                    <select name="Alopecia" id="Alopecia" required="required" class="form-control">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>  
+                                </select>
+
+                </div>
+
+
+                <div class="form-group">
+                    <!-- Obesity-->
+
+                    <span class="text-input">Obesity?:</span>
+                    <select name="Obesity" id="Obesity" required="required" class="form-control">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>  
+                                </select>
+
+                </div>
+
+                <br>
+                <br>
+                <br>
+
+                <!-- Submit  -->
+                <div class="submit">
+                    <input type="submit" value="Submit Details" class="btn btn-primary">
+                </div>
+
+
+            </form>
+
+        </div>
+
+        <br>
+        <br>
+
+        <h3>{{prediction_text}}
+            <h3>
+                <!-- </div> -->
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
